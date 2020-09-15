@@ -4,11 +4,11 @@ var opponentLevel = 1;
 var opponentHealth = 1;
 var opponentRewards = 5;
 
-for (let i = 0; i < 10000; i + 0.05) {
+for (let i = 0; i < 100; i + 0.05) {
     let automator = {
         cost: Math.pow(50, 1 + i),
         amount: 0,
-        mult: 1,  
+        mult: 1 
     }
     automators.push(automator)
 }    
@@ -21,9 +21,9 @@ function format(amount) {
 }
 
 function updateGUI() {
-    for (let i = 0; i < 10; i++) {
+    for (let automatorNumber = 0; automatorNumber < 10; automatorNumber++) {
         let a = automators[i]
-        document.getElementById("auto" + (i + 1)).innerHTML = "Amount: " + format(a.amount) + "<br>Multiplier: " + format(a.mult) + "<br>Cost: " + format(g.cost)
+        document.getElementById("auto" + (automatorNumber + 1)).innerHTML = "Amount: " + format(a.amount) + "<br>Multiplier: " + format(a.mult) + "<br>Cost: " + format(a.cost)
     }
 }
 
