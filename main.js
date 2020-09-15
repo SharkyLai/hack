@@ -34,5 +34,7 @@ function levelUp() {
     opponentRewards = Math.pow(opponentLevel, 1.5);
 } 
 
+document.getElementbyId("opponentLevelHTML").innerHTML = "opponentLevel";
+
 updateGUI();
 
