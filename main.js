@@ -46,9 +46,7 @@ function randomString(items){
 
 console.log(randomString(newsArray));
 
-var randomNews;
-
-randomString(newsArray) == randomNews;
+var randomNews = document.createElement(randomNewsHTML);
 
 document.getElementById(randomNews).innerHTML = "Breaking news : " + randomNews;
 
