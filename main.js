@@ -48,9 +48,9 @@ console.log(randomString(newsArray));
 
 var randomNews;
 
-randomString(newsArray) = randomNews;
+randomString(newsArray) == randomNews;
 
-document.getElementbyId(randomNews).innerHTML = randomNews;
+document.getElementById(randomNews).innerHTML = randomNews;
 
 
 // updateGUI();
