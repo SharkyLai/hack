@@ -50,7 +50,7 @@ var randomNews;
 
 randomString(newsArray) == randomNews;
 
-document.getElementById(randomNews).innerHTML = randomNews;
+document.getElementById(randomNews).innerHTML = "Breaking news : " + randomNews;
 
 
 // updateGUI();
