@@ -9,15 +9,6 @@ body{
 }
 
 .hi{
-        width: 100px;
-	height: 100px;
-	color: #FFFFFF;
-	position: relative;
-	animation-name: hi;
-	animation-duration: 4s;
-	
-@keyframes hi {
-  0%   {left:0px; top:0px;}
-  100% {left:100px; top:0px;}
+        color: white;
 }
 
