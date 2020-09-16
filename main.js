@@ -4,14 +4,16 @@ var opponentLevel = 1;
 var opponentHealth = 1;
 var opponentRewards = 5;
 
-for (let i = 0; i < 100; i + 0.05) {
+/*for (let i = 0; i < 100; i + 0.05) {
     let automator = {
         cost: Math.pow(50, 1 + i),
         amount: 0,
         mult: 1 
     }
-    automators.push(automator)
-}    
+    
+}  */
+
+//automator.push(automators)
 
 function format(amount) {
   let power = Math.floor(Math.log10(amount))
@@ -20,12 +22,12 @@ function format(amount) {
   return mantissa.toFixed(2) + "e" + power
 }
 
-function updateGUI() {
-    for (let automatorNumber = 0; automatorNumber < 10; automatorNumber++) {
-        let a = automators[i]
+/* function updateGUI() {
+    for (let i = 0; automatorNumber < 10; automatorNumber++) {
+        let a = automators[automatorNumber]
         document.getElementById("auto" + (automatorNumber + 1)).innerHTML = "Amount: " + format(a.amount) + "<br>Multiplier: " + format(a.mult) + "<br>Cost: " + format(a.cost)
     }
-}
+} */
 
 function levelUp() {
     opponentLevel = opponentLevel + 1;
@@ -34,7 +36,24 @@ function levelUp() {
     opponentRewards = Math.pow(opponentLevel, 1.5);
 } 
 
-document.getElementbyId("opponentLevelHTML").innerHTML = "opponentLevel";
 
-updateGUI();
+
+var newsArray = ["congratulations! you have an internet connection.", " 'im gonna implement that later.' -shark " , " 'this game sucks.' -IGN " , "isn't this just a worse version of cookie clicker?"];
+
+function randomString(items){
+ return items[Math.floor(Math.random()*items.length)];
+}
+
+console.log(randomString(newsArray));
+
+var randomNews;
+
+randomString(newsArray) = randomNews;
+
+document.getElementbyId(randomNews).innerHTML = randomNews;
+
+
+// updateGUI();
+
+
 
