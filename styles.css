@@ -11,7 +11,7 @@ body{
 .hi{
         width: 100px;
 	height: 100px;
-	color:white;
+	color: #FFFFFF;
 	position: relative;
 	animation-name: hi;
 	animation-duration: 4s;
