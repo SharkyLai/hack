@@ -1,4 +1,4 @@
-var Stellar = 10;
+var Stellar = 0;
 var automators = []
 var opponentLevel = 1;
 var opponentHealth = 1;
@@ -12,6 +12,12 @@ var opponentRewards = 5;
     }
     
 }  */
+
+function Hack(){
+    Steller ++;
+    
+    document.getElementById('Stellar').innerHTML = Stellar;
+    return true 
 
 //automator.push(automators)
 
