@@ -33,7 +33,7 @@ function levelUp() {
     opponentLevel = opponentLevel + 1;
     opponentHealth = Math.pow(opponentLevel, 3);
     Stellar = opponentRewards + Stellar;
-    opponentRewards = Math.pow(opponentLevel, 1.5);
+    opponentRewards = Math.pow(opponentLevel, 2.5);
 } 
 
 
