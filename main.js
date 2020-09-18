@@ -14,7 +14,7 @@ var opponentRewards = 5;
 }  */
 
 function Hack(){
-    Steller ++;
+    Stellar ++;
     
     document.getElementById('Stellar').innerHTML = Stellar;
     return true 
