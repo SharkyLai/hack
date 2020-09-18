@@ -18,6 +18,7 @@ function Hack(){
     
     document.getElementById('Stellar').innerHTML = Stellar;
     return true 
+}
 
 //automator.push(automators)
 
