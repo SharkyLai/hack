@@ -53,7 +53,7 @@ console.log(randomString(newsArray));
 
 var randomNews = randomString(newsArray);
 
-document.getElementById("randomNews").innerHTML = "Breaking news : " + randomNews;
+document.getElementById("randomNews").innerHTML = "Breaking news: " + randomNews;
 
 
 // updateGUI();
