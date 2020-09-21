@@ -1,6 +1,6 @@
 var Stellar = 10;
 
-document.getElementById(Stellar).innerHTML = ("You have " + Stellar + " Stellar.");
+document.getElementById("Stellar").innerHTML = "You have " + Stellar + " Stellar.";
 var automators = []
 var opponentLevel = 1;
 var opponentHealth = 1;
