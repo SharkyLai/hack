@@ -1,10 +1,12 @@
-var Stellar = 10;
+var gameData = {
+    Stellar: 10,
+    opponentLevel: 1,
+    opponentHealth: 1,
+    opponentRewards: 5,
+}
 
-document.getElementById("Stellar").innerHTML = "You have " + Stellar + " Stellar.";
-var automators = []
-var opponentLevel = 1;
-var opponentHealth = 1;
-var opponentRewards = 5;
+document.getElementById("Stellar").innerHTML = "You have " + gameData.Stellar + " Stellar.";
+
 
 /*for (let i = 0; i < 100; i + 0.05) {
     let automator = {
@@ -32,14 +34,14 @@ function format(amount) {
 } */
 
 function levelUp() {
-    opponentLevel = opponentLevel + 1;
-    opponentHealth = Math.pow(opponentLevel, 3);
-    Stellar = opponentRewards + Stellar;
-    opponentRewards = Math.pow(opponentLevel, 2.5);
+    gameData.opponentLevel = gameData.opponentLevel + 1;
+    gameData.opponentHealth = Math.pow(gameData.opponentLevel, 3);
+    gameData.Stellar = gameData.opponentRewards + gameData.Stellar;
+    gameData.opponentRewards = Math.pow(gameData.opponentLevel, 2.5);
 } 
 
-document.getElementById(opponentLevel).innerHTML = ("Level: " + opponentLevel);
-document.getElementById(opponentHealth).innerHTML = ("HP: " + opponentHealth);
+document.getElementById("opponentLevel").innerHTML = ("Level: " + gameData.opponentLevel);
+document.getElementById("opponentHealth").innerHTML = ("HP: " + gameData.opponentHealth);
 
 var newsArray = ["congratulations! you have an internet connection.", " 'im gonna implement that later.' -shark " , " 'this game sucks.' -IGN " , "isn't this just a worse version of cookie clicker?"];
 
@@ -49,9 +51,9 @@ function randomString(items){
 
 console.log(randomString(newsArray));
 
-var randomNews = document.createElement(randomNewsHTML);
+var randomNews = randomString(newsArray);
 
-document.getElementById(randomNews).innerHTML = "Breaking news : " + randomNews;
+document.getElementById("randomNews").innerHTML = "Breaking news : " + randomNews;
 
 
 // updateGUI();
