@@ -5,7 +5,6 @@ var gameData = {
     opponentRewards: 5,
 }
 
-document.getElementById("Stellar").innerHTML = "You have " + gameData.Stellar + " Stellar.";
 
 
 /*for (let i = 0; i < 100; i + 0.05) {
@@ -38,10 +37,13 @@ function levelUp() {
     gameData.opponentHealth = Math.pow(gameData.opponentLevel, 2.75);
     gameData.Stellar = gameData.opponentRewards + gameData.Stellar;
     gameData.opponentRewards = Math.pow(gameData.opponentLevel, 2.5);
+    document.getElementById("opponentLevel").innerHTML = "Level: " + gameData.opponentLevel;
+    document.getElementById("opponentHealth").innerHTML = "HP: " + gameData.opponentHealth;
+    document.getElementById("Stellar").innerHTML = "You have " + gameData.Stellar + " Stellar.";
+
 } 
 
-document.getElementById("opponentLevel").innerHTML = "Level: " + gameData.opponentLevel;
-document.getElementById("opponentHealth").innerHTML = "HP: " + gameData.opponentHealth;
+
 
 var newsArray = ["congratulations! you have an internet connection.", " 'im gonna implement that later.' -shark " , " 'this game sucks.' -IGN " , "isn't this just a worse version of cookie clicker?"];
 
