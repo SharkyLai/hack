@@ -38,8 +38,8 @@ function levelUp() {
     opponentRewards = Math.pow(opponentLevel, 2.5);
 } 
 
-document.getElementById(opponentLevel) = ("Level: " + opponentLevel)
-document.getElementById(opponentHealth) = ("HP: " + opponentHealth)
+document.getElementById(opponentLevel).innerHTML = ("Level: " + opponentLevel);
+document.getElementById(opponentHealth).innerHTML = ("HP: " + opponentHealth);
 
 var newsArray = ["congratulations! you have an internet connection.", " 'im gonna implement that later.' -shark " , " 'this game sucks.' -IGN " , "isn't this just a worse version of cookie clicker?"];
 
