@@ -35,7 +35,7 @@ function format(amount) {
 
 function levelUp() {
     gameData.opponentLevel = gameData.opponentLevel + 1;
-    gameData.opponentHealth = Math.pow(gameData.opponentLevel, 3);
+    gameData.opponentHealth = Math.pow(gameData.opponentLevel, 2.75);
     gameData.Stellar = gameData.opponentRewards + gameData.Stellar;
     gameData.opponentRewards = Math.pow(gameData.opponentLevel, 2.5);
 } 
