@@ -40,7 +40,7 @@ function levelUp() {
     document.getElementById("opponentLevel").innerHTML = "Level: " + gameData.opponentLevel;
     document.getElementById("opponentHealth").innerHTML = "HP: " + format(gameData.opponentHealth);
     document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
-    document.getElementById("opponentRewards").innerHTML = "You wil earn " + format(gameData.opponentRewards) + " Stellar per computer hacked.";
+    document.getElementById("opponentRewards").innerHTML = "You will earn " + format(gameData.opponentRewards) + " Stellar per computer hacked.";
 } 
 
 
