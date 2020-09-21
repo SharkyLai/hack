@@ -1,4 +1,6 @@
 var Stellar = 10;
+
+document.getElementById(Stellar).innerHTML = ("You have " + Stellar + " Stellar.");
 var automators = []
 var opponentLevel = 1;
 var opponentHealth = 1;
@@ -36,7 +38,8 @@ function levelUp() {
     opponentRewards = Math.pow(opponentLevel, 2.5);
 } 
 
-
+document.getElementById(opponentLevel) = ("Level: " + opponentLevel)
+document.getElementById(opponentHealth) = ("HP: " + opponentHealth)
 
 var newsArray = ["congratulations! you have an internet connection.", " 'im gonna implement that later.' -shark " , " 'this game sucks.' -IGN " , "isn't this just a worse version of cookie clicker?"];
 
