@@ -38,9 +38,9 @@ function levelUp() {
     gameData.Stellar = gameData.opponentRewards + gameData.Stellar;
     gameData.opponentRewards = Math.pow(gameData.opponentLevel, 2.5);
     document.getElementById("opponentLevel").innerHTML = "Level: " + gameData.opponentLevel;
-    document.getElementById("opponentHealth").innerHTML = "HP: " + gameData.opponentHealth;
-    document.getElementById("Stellar").innerHTML = "You have " + gameData.Stellar + " Stellar.";
-
+    document.getElementById("opponentHealth").innerHTML = "HP: " + format(gameData.opponentHealth);
+    document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
+    document.getElementById("opponentRewards").innerHTML = "You wil earn " + format(gameData.opponentRewards) + " Stellar per computer hacked.";
 } 
 
 
