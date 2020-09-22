@@ -42,7 +42,7 @@ function format(amount) {
 function levelUp() {
    if (gameData.damagePerSecond >= gameData.opponentHealth) {
     gameData.opponentLevel = gameData.opponentLevel + 1;
-    gameData.opponentHealth = Math.pow(15, gameData.opponentLevel - 1);
+    gameData.opponentHealth = Math.pow(10, gameData.opponentLevel - 1);
     gameData.Stellar = gameData.opponentRewards + gameData.Stellar;
     gameData.opponentRewards = Math.pow(30, gameData.opponentLevel);
     document.getElementById("opponentLevel").innerHTML = "Level: " + gameData.opponentLevel;
@@ -83,8 +83,8 @@ function autoHack() {
 function lastLevel() {
   if (gameData.opponentLevel > 1) {
   gameData.opponentLevel = gameData.opponentLevel - 1;
-  gameData.opponentHealth = Math.pow(15, gameData.opponentLevel - 1);
-  gameData.opponentRewards = Math.pow(12, gameData.opponentLevel);
+  gameData.opponentHealth = Math.pow(10, gameData.opponentLevel - 1);
+  gameData.opponentRewards = Math.pow(30, gameData.opponentLevel);
   document.getElementById("opponentLevel").innerHTML = "Level: " + gameData.opponentLevel;
   document.getElementById("opponentHealth").innerHTML = "HP: " + format(gameData.opponentHealth);
   document.getElementById("opponentRewards").innerHTML = "You will earn " + format(gameData.opponentRewards) + " Stellar per computer hacked.";
