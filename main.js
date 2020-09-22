@@ -8,12 +8,15 @@ var gameData = {
     auto1cost: 10,
     auto2cost: 500,
     auto3cost: 40000,
+    auto4cost: 2000000,
     auto1mult: 1,
     auto2mult: 1,
     auto3mult: 1,
+    auto4mult: 1,
     auto1amount: 0,
     auto2amount: 0,
     auto3amount: 0,
+    auto4amount: 0,
 }
 
 
@@ -48,7 +51,7 @@ function levelUp() {
     gameData.opponentLevel = gameData.opponentLevel + 1;
     gameData.opponentHealth = Math.pow(10, gameData.opponentLevel - 1);
     gameData.Stellar = gameData.opponentRewards + gameData.Stellar;
-    gameData.opponentRewards = Math.pow(30, gameData.opponentLevel);
+    gameData.opponentRewards = Math.pow(35, gameData.opponentLevel);
     document.getElementById("opponentLevel").innerHTML = "Level: " + gameData.opponentLevel;
     document.getElementById("opponentHealth").innerHTML = "HP: " + format(gameData.opponentHealth);
     document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
@@ -59,8 +62,8 @@ function levelUp() {
 function buyAutomator1() {
   if (gameData.Stellar >= gameData.auto1cost) {
      gameData.Stellar = gameData.Stellar - gameData.auto1cost;
-     gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto1mult * 1;
-     gameData.auto1cost = gameData.auto1cost * 1.2;
+     gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto1mult * 2;
+     gameData.auto1cost = gameData.auto1cost * 1.05;
      gameData.auto1amount = gameData.auto1amount + 1;
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
      document.getElementById("upgradeAuto1").innerHTML = "Upgrade Console (" + format(gameData.auto1amount) + ") Cost: " + format(gameData.auto1cost) + " Stellar"
@@ -73,7 +76,7 @@ function buyAutomator2() {
   if (gameData.Stellar >= gameData.auto2cost) {
      gameData.Stellar = gameData.Stellar - gameData.auto2cost;
      gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto2mult * 50;
-     gameData.auto2cost = gameData.auto2cost * 1.2;
+     gameData.auto2cost = gameData.auto2cost * 1.1;
      gameData.auto2amount = gameData.auto2amount + 1;
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
      document.getElementById("upgradeAuto2").innerHTML = "Upgrade Script (" + format(gameData.auto2amount) + ") Cost: " + format(gameData.auto2cost) + " Stellar"
@@ -85,8 +88,8 @@ function buyAutomator2() {
 function buyAutomator3() {
   if (gameData.Stellar >= gameData.auto3cost) {
      gameData.Stellar = gameData.Stellar - gameData.auto3cost;
-     gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto3mult * 50;
-     gameData.auto3cost = gameData.auto3cost * 1.2;
+     gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto3mult * 600;
+     gameData.auto3cost = gameData.auto3cost * 1.15;
      gameData.auto3amount = gameData.auto3amount + 1;
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
      document.getElementById("upgradeAuto3").innerHTML = "Upgrade Beginner Hacker (" + format(gameData.auto3amount) + ") Cost: " + format(gameData.auto3cost) + " Stellar"
@@ -94,6 +97,18 @@ function buyAutomator3() {
   }
 }
 
+
+function buyAutomator4() {
+  if (gameData.Stellar >= gameData.auto4cost) {
+     gameData.Stellar = gameData.Stellar - gameData.auto4cost;
+     gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto4mult * 14000;
+     gameData.auto4cost = gameData.auto4cost * 1.2;
+     gameData.auto4amount = gameData.auto4amount + 1;
+     document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
+     document.getElementById("upgradeAuto4").innerHTML = "Upgrade Library (" + format(gameData.auto4amount) + ") Cost: " + format(gameData.auto4cost) + " Stellar"
+     document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
+  }
+}
 
 
 function wait(ms){
@@ -115,7 +130,7 @@ function lastLevel() {
   if (gameData.opponentLevel > 1) {
   gameData.opponentLevel = gameData.opponentLevel - 1;
   gameData.opponentHealth = Math.pow(10, gameData.opponentLevel - 1);
-  gameData.opponentRewards = Math.pow(30, gameData.opponentLevel);
+  gameData.opponentRewards = Math.pow(35, gameData.opponentLevel);
   document.getElementById("opponentLevel").innerHTML = "Level: " + gameData.opponentLevel;
   document.getElementById("opponentHealth").innerHTML = "HP: " + format(gameData.opponentHealth);
   document.getElementById("opponentRewards").innerHTML = "You will earn " + format(gameData.opponentRewards) + " Stellar per computer hacked.";
