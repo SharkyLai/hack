@@ -6,10 +6,11 @@ var gameData = {
     wpw: 1,
     damagePerSecond: 0,
     auto1cost: 10,
-    auto2cost: 200,
+    auto2cost: 500,
     auto1mult: 1,
     auto2mult: 1,
     auto1amount: 0,
+    auto2amount: 0,
 }
 
 
@@ -64,6 +65,18 @@ function buyAutomator1() {
   }
 }
 
+
+function buyAutomator2() {
+  if (gameData.Stellar >= gameData.auto2cost) {
+     gameData.Stellar = gameData.Stellar - gameData.auto2cost;
+     gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto2mult * 50;
+     gameData.auto2cost = gameData.auto2cost * 1.2;
+     gameData.auto2amount = gameData.auto2amount + 1;
+     document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
+     document.getElementById("upgradeAuto2").innerHTML = "Upgrade Script (" + format(gameData.auto2amount) + ") Cost: " + format(gameData.auto2cost) + " Stellar"
+     document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
+  }
+}
 
 function wait(ms){
   var start = new Date().getTime();
