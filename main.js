@@ -7,10 +7,13 @@ var gameData = {
     damagePerSecond: 0,
     auto1cost: 10,
     auto2cost: 500,
+    auto3cost: 40000,
     auto1mult: 1,
     auto2mult: 1,
+    auto3mult: 1,
     auto1amount: 0,
     auto2amount: 0,
+    auto3amount: 0,
 }
 
 
@@ -78,6 +81,21 @@ function buyAutomator2() {
   }
 }
 
+
+function buyAutomator3() {
+  if (gameData.Stellar >= gameData.auto3cost) {
+     gameData.Stellar = gameData.Stellar - gameData.auto3cost;
+     gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto3mult * 50;
+     gameData.auto3cost = gameData.auto3cost * 1.2;
+     gameData.auto3amount = gameData.auto3amount + 1;
+     document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
+     document.getElementById("upgradeAuto3").innerHTML = "Upgrade Beginner Hacker (" + format(gameData.auto3amount) + ") Cost: " + format(gameData.auto3cost) + " Stellar"
+     document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
+  }
+}
+
+
+
 function wait(ms){
   var start = new Date().getTime();
   var end = start;
@@ -108,14 +126,14 @@ var mainGameLoop = window.setInterval(function() {
   autoHack()
 }, 1000)
 
-var saveGameLoop = window.setInterval(function() {
+/* var saveGameLoop = window.setInterval(function() {
   localStorage.setItem("hacklickerSave", JSON.stringify(gameData))
 }, 15000)
 
 var savegame = JSON.parse(localStorage.getItem("hacklickerSave"))
 if (savegame !== null) {
   gameData = savegame
-}
+} */
 
 var newsArray = ["congratulations! you have an internet connection.", " 'im gonna implement that later.' -shark " , " 'this game sucks.' -IGN " , "isn't this just a worse version of cookie clicker?"];
 
