@@ -108,6 +108,15 @@ var mainGameLoop = window.setInterval(function() {
   autoHack()
 }, 1000)
 
+var saveGameLoop = window.setInterval(function() {
+  localStorage.setItem("hacklickerSave", JSON.stringify(gameData))
+}, 15000)
+
+var savegame = JSON.parse(localStorage.getItem("hacklickerSave"))
+if (savegame !== null) {
+  gameData = savegame
+}
+
 var newsArray = ["congratulations! you have an internet connection.", " 'im gonna implement that later.' -shark " , " 'this game sucks.' -IGN " , "isn't this just a worse version of cookie clicker?"];
 
 function randomString(items){
