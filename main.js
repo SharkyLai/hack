@@ -58,7 +58,7 @@ function buyAutomator1() {
      gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto1mult * 1;
      gameData.auto1cost = gameData.auto1cost * 1.2;
      gameData.auto1amount = gameData.auto1amount + 1;
-     document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage per second."
+     document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
      document.getElementById("upgradeAuto1").innerHTML = "Upgrade Console (" + format(gameData.auto1amount) + ") Cost: " + format(gameData.auto1cost) + " Stellar"
      document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
   }
