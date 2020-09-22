@@ -44,7 +44,7 @@ function levelUp() {
     gameData.opponentLevel = gameData.opponentLevel + 1;
     gameData.opponentHealth = Math.pow(15, gameData.opponentLevel - 1);
     gameData.Stellar = gameData.opponentRewards + gameData.Stellar;
-    gameData.opponentRewards = Math.pow(12, gameData.opponentLevel);
+    gameData.opponentRewards = Math.pow(30, gameData.opponentLevel);
     document.getElementById("opponentLevel").innerHTML = "Level: " + gameData.opponentLevel;
     document.getElementById("opponentHealth").innerHTML = "HP: " + format(gameData.opponentHealth);
     document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
