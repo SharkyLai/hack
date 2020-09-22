@@ -2,8 +2,14 @@ var gameData = {
     Stellar: 10,
     opponentLevel: 1,
     opponentHealth: 1,
-    opponentRewards: 5,
-    wpw: 1
+    opponentRewards: 30,
+    wpw: 1,
+    damagePerSecond: 0,
+    auto1cost: 10,
+    auto2cost: 200,
+    auto1mult: 1,
+    auto2mult: 1,
+    auto1amount: 0,
 }
 
 
@@ -34,17 +40,60 @@ function format(amount) {
 } */
 
 function levelUp() {
+   if (gameData.damagePerSecond >= gameData.opponentHealth) {
     gameData.opponentLevel = gameData.opponentLevel + 1;
-    gameData.opponentHealth = Math.pow(20, gameData.opponentLevel);
+    gameData.opponentHealth = Math.pow(15, gameData.opponentLevel - 1);
     gameData.Stellar = gameData.opponentRewards + gameData.Stellar;
-    gameData.opponentRewards = Math.pow(14, gameData.opponentLevel);
+    gameData.opponentRewards = Math.pow(12, gameData.opponentLevel);
     document.getElementById("opponentLevel").innerHTML = "Level: " + gameData.opponentLevel;
     document.getElementById("opponentHealth").innerHTML = "HP: " + format(gameData.opponentHealth);
     document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
     document.getElementById("opponentRewards").innerHTML = "You will earn " + format(gameData.opponentRewards) + " Stellar per computer hacked.";
-} 
+  }
+}
+
+function buyAutomator1() {
+  if (gameData.Stellar >= gameData.auto1cost) {
+     gameData.Stellar = gameData.Stellar - gameData.auto1cost;
+     gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto1mult * 1;
+     gameData.auto1cost = gameData.auto1cost * 1.2;
+     gameData.auto1amount = gameData.auto1amount + 1;
+     document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage per second."
+     document.getElementById("upgradeAuto1").innerHTML = "Upgrade Console (" + format(gameData.auto1amount) + ") Cost: " + format(gameData.auto1cost) + " Stellar"
+     document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
+  }
+}
 
 
+function wait(ms){
+  var start = new Date().getTime();
+  var end = start;
+  while(end < start + ms) {
+    end = new Date().getTime();
+ }
+}
+
+function autoHack() {
+  if (gameData.damagePerSecond >= gameData.opponentHealth) {
+   gameData.Stellar = gameData.opponentRewards + gameData.Stellar;
+   document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
+  }
+}
+
+function lastLevel() {
+  if (gameData.opponentLevel > 1) {
+  gameData.opponentLevel = gameData.opponentLevel - 1;
+  gameData.opponentHealth = Math.pow(15, gameData.opponentLevel - 1);
+  gameData.opponentRewards = Math.pow(12, gameData.opponentLevel);
+  document.getElementById("opponentLevel").innerHTML = "Level: " + gameData.opponentLevel;
+  document.getElementById("opponentHealth").innerHTML = "HP: " + format(gameData.opponentHealth);
+  document.getElementById("opponentRewards").innerHTML = "You will earn " + format(gameData.opponentRewards) + " Stellar per computer hacked.";
+ } 
+}
+
+var mainGameLoop = window.setInterval(function() {
+  autoHack()
+}, 1000)
 
 var newsArray = ["congratulations! you have an internet connection.", " 'im gonna implement that later.' -shark " , " 'this game sucks.' -IGN " , "isn't this just a worse version of cookie clicker?"];
 
@@ -57,6 +106,9 @@ console.log(randomString(newsArray));
 var randomNews = randomString(newsArray);
 
 document.getElementById("randomNews").innerHTML = "Breaking news: " + randomNews;
+
+
+
 
 var words_1to100 = ["cookie", "string", "array", "python", "DDoS", "denial", "service", "variable", "constant", "function", "brute", "force", "framework", "script", "code", "spaghetti", "error", "html", "javascript", "hacker", "firewall", "css"];
 
@@ -100,7 +152,7 @@ function generateHackArray() {
 }
 
 
-generateHackArray();
+//generateHackArray();
 
 
 // updateGUI();
