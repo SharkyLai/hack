@@ -170,10 +170,14 @@ function lastLevel() {
 }
 
 function buyHackSpeed() {
+  if (gameData.Stellar >= gameData.hackSpeedCost) {
+  gameData.Stellar = gameData.Stellar - gameData.hackSpeedCost;
   gameData.hackSpeed = gameData.hackSpeed / 1.2;
   gameData.hackSpeedCost = gameData.hackSpeedCost * 100;
   document.getElementById("hackSpeedButton").innerHTML = "Increase Hack Speed, Cost: " + format(gameData.hackSpeedCost)
   document.getElementById("hackSpeed").innerHTML = "You hack every " + gameData.hackSpeed + "ms."
+  document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
+  }
 }
 
 
