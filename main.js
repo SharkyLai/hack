@@ -58,11 +58,22 @@ function levelUp() {
    if (gameData.damagePerSecond >= gameData.opponentHealth) {
     gameData.opponentLevel = gameData.opponentLevel + 1;
     gameData.opponentHealth = Math.pow(10, gameData.opponentLevel - 1);
-    gameData.opponentRewards = Math.pow(30, gameData.opponentLevel);
+    gameData.opponentRewards = Math.pow(25, gameData.opponentLevel);
     document.getElementById("opponentLevel").innerHTML = "Level: " + gameData.opponentLevel;
     document.getElementById("opponentHealth").innerHTML = "HP: " + format(gameData.opponentHealth);
     document.getElementById("opponentRewards").innerHTML = "You will earn " + format(gameData.opponentRewards) + " Stellar per computer hacked.";
   }
+}
+
+function lastLevel() {
+  if (gameData.opponentLevel > 1) {
+  gameData.opponentLevel = gameData.opponentLevel - 1;
+  gameData.opponentHealth = Math.pow(10, gameData.opponentLevel - 1);
+  gameData.opponentRewards = Math.pow(25, gameData.opponentLevel);
+  document.getElementById("opponentLevel").innerHTML = "Level: " + gameData.opponentLevel;
+  document.getElementById("opponentHealth").innerHTML = "HP: " + format(gameData.opponentHealth);
+  document.getElementById("opponentRewards").innerHTML = "You will earn " + format(gameData.opponentRewards) + " Stellar per computer hacked.";
+ } 
 }
 
 function buyAutomator1() {
@@ -71,8 +82,11 @@ function buyAutomator1() {
      gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto1mult * 2;
      gameData.auto1cost = gameData.auto1cost * 1.05;
      gameData.auto1amount = gameData.auto1amount + 1;
+     if (gameData.auto1amount % 10 == 0) {
+       gameData.auto1mult = Math.pow(2, gameData.auto1amount / 10);
+     }
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
-     document.getElementById("upgradeAuto1").innerHTML = "Upgrade Console (" + format(gameData.auto1amount) + ") Cost: " + format(gameData.auto1cost) + " Stellar | Damage: 2"
+     document.getElementById("upgradeAuto1").innerHTML = "Upgrade Console (" + format(gameData.auto1amount) + ") Cost: " + format(gameData.auto1cost) + " Stellar | Damage: 2 | x" + format(gameData.auto1mult)
      document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
   }
 }
@@ -84,8 +98,11 @@ function buyAutomator2() {
      gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto2mult * 50;
      gameData.auto2cost = gameData.auto2cost * 1.1;
      gameData.auto2amount = gameData.auto2amount + 1;
+     if (gameData.auto2amount % 10 == 0) {
+      gameData.auto2mult = Math.pow(2, gameData.auto2amount / 10);
+    }
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
-     document.getElementById("upgradeAuto2").innerHTML = "Upgrade Script (" + format(gameData.auto2amount) + ") Cost: " + format(gameData.auto2cost) + " Stellar | Damage: 50"
+     document.getElementById("upgradeAuto2").innerHTML = "Upgrade Script (" + format(gameData.auto2amount) + ") Cost: " + format(gameData.auto2cost) + " Stellar | Damage: 50 | x" + format(gameData.auto2mult)
      document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
   }
 }
@@ -97,8 +114,11 @@ function buyAutomator3() {
      gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto3mult * 600;
      gameData.auto3cost = gameData.auto3cost * 1.15;
      gameData.auto3amount = gameData.auto3amount + 1;
+     if (gameData.auto3amount % 10 == 0) {
+      gameData.auto3mult = Math.pow(2, gameData.auto3amount / 10);
+    }
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
-     document.getElementById("upgradeAuto3").innerHTML = "Upgrade Beginner Hacker (" + format(gameData.auto3amount) + ") Cost: " + format(gameData.auto3cost) + " Stellar | Damage: 600"
+     document.getElementById("upgradeAuto3").innerHTML = "Upgrade Beginner Hacker (" + format(gameData.auto3amount) + ") Cost: " + format(gameData.auto3cost) + " Stellar | Damage: 600 | x" + format(gameData.auto3mult)
      document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
   }
 }
@@ -110,8 +130,11 @@ function buyAutomator4() {
      gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto4mult * 14000;
      gameData.auto4cost = gameData.auto4cost * 1.2;
      gameData.auto4amount = gameData.auto4amount + 1;
+     if (gameData.auto4amount % 10 == 0) {
+      gameData.auto4mult = Math.pow(2, gameData.auto4amount / 10);
+    }
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
-     document.getElementById("upgradeAuto4").innerHTML = "Upgrade Library (" + format(gameData.auto4amount) + ") Cost: " + format(gameData.auto4cost) + " Stellar | Damage: 1.4e4"
+     document.getElementById("upgradeAuto4").innerHTML = "Upgrade Library (" + format(gameData.auto4amount) + ") Cost: " + format(gameData.auto4cost) + " Stellar | Damage: 1.4e4 | x" + format(gameData.auto4mult)
      document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
   }
 }
@@ -122,8 +145,11 @@ function buyAutomator5() {
      gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto5mult * 1500000;
      gameData.auto5cost = gameData.auto5cost * 1.25;
      gameData.auto5amount = gameData.auto5amount + 1;
+     if (gameData.auto5amount % 10 == 0) {
+      gameData.auto5mult = Math.pow(2, gameData.auto5amount / 10);
+    }
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
-     document.getElementById("upgradeAuto5").innerHTML = "Upgrade Code Editor (" + format(gameData.auto5amount) + ") Cost: " + format(gameData.auto5cost) + " Stellar | Damage: 1.5e6"
+     document.getElementById("upgradeAuto5").innerHTML = "Upgrade Code Editor (" + format(gameData.auto5amount) + ") Cost: " + format(gameData.auto5cost) + " Stellar | Damage: 1.5e6 | x" + format(gameData.auto5mult)
      document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
   }
 }
@@ -135,8 +161,11 @@ function buyAutomator6() {
      gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto6mult * 700000000;
      gameData.auto6cost = gameData.auto6cost * 1.3;
      gameData.auto6amount = gameData.auto6amount + 1;
+     if (gameData.auto6amount % 10 == 0) {
+      gameData.auto6mult = Math.pow(2, gameData.auto6amount / 10);
+    }
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
-     document.getElementById("upgradeAuto6").innerHTML = "Upgrade Brute-Force Hacks (" + format(gameData.auto6amount) + ") Cost: " + format(gameData.auto6cost) + " Stellar | Damage: 7e8"
+     document.getElementById("upgradeAuto6").innerHTML = "Upgrade Brute-Force Hacks (" + format(gameData.auto6amount) + ") Cost: " + format(gameData.auto6cost) + " Stellar | Damage: 7e8 | x" + format(gameData.auto6mult)
      document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
   }
 }
@@ -156,17 +185,6 @@ function autoHack() {
    gameData.Stellar = gameData.opponentRewards + gameData.Stellar;
    document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
   }
-}
-
-function lastLevel() {
-  if (gameData.opponentLevel > 1) {
-  gameData.opponentLevel = gameData.opponentLevel - 1;
-  gameData.opponentHealth = Math.pow(10, gameData.opponentLevel - 1);
-  gameData.opponentRewards = Math.pow(30, gameData.opponentLevel);
-  document.getElementById("opponentLevel").innerHTML = "Level: " + gameData.opponentLevel;
-  document.getElementById("opponentHealth").innerHTML = "HP: " + format(gameData.opponentHealth);
-  document.getElementById("opponentRewards").innerHTML = "You will earn " + format(gameData.opponentRewards) + " Stellar per computer hacked.";
- } 
 }
 
 function buyHackSpeed() {
