@@ -17,6 +17,7 @@ var gameData = {
     auto2amount: 0,
     auto3amount: 0,
     auto4amount: 0,
+    hackSpeed: 1000,
 }
 
 
@@ -50,11 +51,9 @@ function levelUp() {
    if (gameData.damagePerSecond >= gameData.opponentHealth) {
     gameData.opponentLevel = gameData.opponentLevel + 1;
     gameData.opponentHealth = Math.pow(10, gameData.opponentLevel - 1);
-    gameData.Stellar = gameData.opponentRewards + gameData.Stellar;
-    gameData.opponentRewards = Math.pow(35, gameData.opponentLevel);
+    gameData.opponentRewards = Math.pow(30, gameData.opponentLevel);
     document.getElementById("opponentLevel").innerHTML = "Level: " + gameData.opponentLevel;
     document.getElementById("opponentHealth").innerHTML = "HP: " + format(gameData.opponentHealth);
-    document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
     document.getElementById("opponentRewards").innerHTML = "You will earn " + format(gameData.opponentRewards) + " Stellar per computer hacked.";
   }
 }
@@ -66,7 +65,7 @@ function buyAutomator1() {
      gameData.auto1cost = gameData.auto1cost * 1.05;
      gameData.auto1amount = gameData.auto1amount + 1;
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
-     document.getElementById("upgradeAuto1").innerHTML = "Upgrade Console (" + format(gameData.auto1amount) + ") Cost: " + format(gameData.auto1cost) + " Stellar"
+     document.getElementById("upgradeAuto1").innerHTML = "Upgrade Console (" + format(gameData.auto1amount) + ") Cost: " + format(gameData.auto1cost) + " Stellar | Damage: 2"
      document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
   }
 }
@@ -79,7 +78,7 @@ function buyAutomator2() {
      gameData.auto2cost = gameData.auto2cost * 1.1;
      gameData.auto2amount = gameData.auto2amount + 1;
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
-     document.getElementById("upgradeAuto2").innerHTML = "Upgrade Script (" + format(gameData.auto2amount) + ") Cost: " + format(gameData.auto2cost) + " Stellar"
+     document.getElementById("upgradeAuto2").innerHTML = "Upgrade Script (" + format(gameData.auto2amount) + ") Cost: " + format(gameData.auto2cost) + " Stellar | Damage: 50"
      document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
   }
 }
@@ -92,7 +91,7 @@ function buyAutomator3() {
      gameData.auto3cost = gameData.auto3cost * 1.15;
      gameData.auto3amount = gameData.auto3amount + 1;
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
-     document.getElementById("upgradeAuto3").innerHTML = "Upgrade Beginner Hacker (" + format(gameData.auto3amount) + ") Cost: " + format(gameData.auto3cost) + " Stellar"
+     document.getElementById("upgradeAuto3").innerHTML = "Upgrade Beginner Hacker (" + format(gameData.auto3amount) + ") Cost: " + format(gameData.auto3cost) + " Stellar | Damage: 600"
      document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
   }
 }
@@ -105,7 +104,7 @@ function buyAutomator4() {
      gameData.auto4cost = gameData.auto4cost * 1.2;
      gameData.auto4amount = gameData.auto4amount + 1;
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
-     document.getElementById("upgradeAuto4").innerHTML = "Upgrade Library (" + format(gameData.auto4amount) + ") Cost: " + format(gameData.auto4cost) + " Stellar"
+     document.getElementById("upgradeAuto4").innerHTML = "Upgrade Library (" + format(gameData.auto4amount) + ") Cost: " + format(gameData.auto4cost) + " Stellar | Damage: 14000"
      document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
   }
 }
@@ -130,7 +129,7 @@ function lastLevel() {
   if (gameData.opponentLevel > 1) {
   gameData.opponentLevel = gameData.opponentLevel - 1;
   gameData.opponentHealth = Math.pow(10, gameData.opponentLevel - 1);
-  gameData.opponentRewards = Math.pow(35, gameData.opponentLevel);
+  gameData.opponentRewards = Math.pow(30, gameData.opponentLevel);
   document.getElementById("opponentLevel").innerHTML = "Level: " + gameData.opponentLevel;
   document.getElementById("opponentHealth").innerHTML = "HP: " + format(gameData.opponentHealth);
   document.getElementById("opponentRewards").innerHTML = "You will earn " + format(gameData.opponentRewards) + " Stellar per computer hacked.";
@@ -139,7 +138,7 @@ function lastLevel() {
 
 var mainGameLoop = window.setInterval(function() {
   autoHack()
-}, 1000)
+}, gameData.hackSpeed)
 
 /* var saveGameLoop = window.setInterval(function() {
   localStorage.setItem("hacklickerSave", JSON.stringify(gameData))
@@ -150,17 +149,15 @@ if (savegame !== null) {
   gameData = savegame
 } */
 
-var newsArray = ["congratulations! you have an internet connection.", " 'im gonna implement that later.' -shark " , " 'this game sucks.' -IGN " , "isn't this just a worse version of cookie clicker?"];
+var newsArray = ["congratulations! you have an internet connection.", " 'im gonna implement that later.' -shark " , " 'this game sucks.' -IGN " , "isn't this just a worse version of cookie clicker?", "retard makes hack game, influencing generations to hack", "the developer of this game works on this stupid thing more than actual features and bug fixes.","#sharkisoverparty","ReferenceError: yourLife is not defined.","why does the code work? why doesn't it work?", "the developer publicly states that he is NOT a hacker.", "if it's worth doing, it's worth overdoing.", "only retards read the news here.", "stop afking!"];
 
 function randomString(items){
  return items[Math.floor(Math.random()*items.length)];
 }
 
-console.log(randomString(newsArray));
-
 var randomNews = randomString(newsArray);
 
-document.getElementById("randomNews").innerHTML = "Breaking news: " + randomNews;
+document.getElementById("randomNews").innerHTML = randomNews;
 
 
 
