@@ -394,6 +394,7 @@ function updateAll() {
   document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage.";
 }
 
+updateAll();
 
 //generateHackArray();
 
