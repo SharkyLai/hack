@@ -35,7 +35,8 @@ var gameData = {
     hackSpeed: 1000,
     hackSpeedCost: 10000,
     hackSpeedTest: 1000,
-    multCap: 1e35
+    multCap: 1e35,
+    tempDamageCost: 1e16
 }
 
 
@@ -291,6 +292,16 @@ function buyHackSpeed() {
   }
 }
 
+function temporaryDamageIncrease() {
+   if (gameData.Stellar >= gameData.tempDamageCost) {
+     gameData.Stellar = gameData.Stellar - gameData.tempDamageCost;
+     gameData.damagePerSecond = gameData.damagePerSecond * 1.4;
+     gameData.tempDamageCost = gameData.tempDamageCost * 10000;
+     document.getElementById("tempDamageIncrease").innerHTML = "Increase your current damage by 1.4x, Cost: " + format(gameData.tempDamageCost)
+     document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
+   }
+}
+
 /* var saveGameLoop = window.setInterval(function() {
   localStorage.setItem("hacklickerSave", JSON.stringify(gameData))
 }, 15000)
@@ -381,6 +392,7 @@ function updateAll() {
   document.getElementById("opponentRewards").innerHTML = "You will earn " + format(gameData.opponentRewards) + " Stellar per computer hacked.";
   document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
   document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
+  document.getElementById("tempDamageIncrease").innerHTML = "Increase your current damage by 1.4x, Cost: " + format(gameData.tempDamageCost)
 }
 
 updateAll();
