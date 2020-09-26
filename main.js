@@ -376,22 +376,22 @@ if (savegame !== null) {
 
 
 function updateAll() {
-  document.getElementById("upgradeAuto1").innerHTML = "Upgrade Console (" + format(gameData.auto1amount) + ") Cost: " + format(gameData.auto1cost) + " Stellar | Damage: 2 | x" + format(gameData.auto1mult)
-  document.getElementById("upgradeAuto2").innerHTML = "Upgrade Script (" + format(gameData.auto2amount) + ") Cost: " + format(gameData.auto2cost) + " Stellar | Damage: 50 | x" + format(gameData.auto2mult)
-  document.getElementById("upgradeAuto3").innerHTML = "Upgrade Beginner Hacker (" + format(gameData.auto3amount) + ") Cost: " + format(gameData.auto3cost) + " Stellar | Damage: 600 | x" + format(gameData.auto3mult)
-  document.getElementById("upgradeAuto4").innerHTML = "Upgrade Library (" + format(gameData.auto4amount) + ") Cost: " + format(gameData.auto4cost) + " Stellar | Damage: 1.4e4 | x" + format(gameData.auto4mult)
-  document.getElementById("upgradeAuto5").innerHTML = "Upgrade Code Editor (" + format(gameData.auto5amount) + ") Cost: " + format(gameData.auto5cost) + " Stellar | Damage: 1.5e6 | x" + format(gameData.auto5mult)
-  document.getElementById("upgradeAuto6").innerHTML = "Upgrade Brute-Force Hacks (" + Math.floor(gameData.auto6amount) + ") Cost: " + format(gameData.auto6cost) + " Stellar | Damage: 7e8 | x" + format(gameData.auto6mult)
-  document.getElementById("upgradeAuto7").innerHTML = "Upgrade Framework (" + Math.floor(gameData.auto7amount) + ") Cost: " + format(gameData.auto7cost) + " Stellar | Damage: 5e12 | x" + format(gameData.auto7mult)
-  document.getElementById("upgradeAuto8").innerHTML = "Upgrade i3 (" + Math.floor(gameData.auto8amount) + ") Cost: " + format(gameData.auto8cost) + " Stellar | Damage: 2e17 | x" + format(gameData.auto8mult)
-  document.getElementById("upgradeAuto9").innerHTML = "Upgrade Malware (" + Math.floor(gameData.auto9amount) + ") Cost: " + format(gameData.auto9cost) + " Stellar | Damage: 9e24 | x" + format(gameData.auto9mult)
+  document.getElementById("upgradeAuto1").innerHTML = "Upgrade Console (" + format(gameData.auto1amount) + ") Cost: " + format(gameData.auto1cost) + " Stellar | Damage: 2 | x" + format(gameData.auto1mult);
+  document.getElementById("upgradeAuto2").innerHTML = "Upgrade Script (" + format(gameData.auto2amount) + ") Cost: " + format(gameData.auto2cost) + " Stellar | Damage: 50 | x" + format(gameData.auto2mult);
+  document.getElementById("upgradeAuto3").innerHTML = "Upgrade Beginner Hacker (" + format(gameData.auto3amount) + ") Cost: " + format(gameData.auto3cost) + " Stellar | Damage: 600 | x" + format(gameData.auto3mult);
+  document.getElementById("upgradeAuto4").innerHTML = "Upgrade Library (" + format(gameData.auto4amount) + ") Cost: " + format(gameData.auto4cost) + " Stellar | Damage: 1.4e4 | x" + format(gameData.auto4mult);
+  document.getElementById("upgradeAuto5").innerHTML = "Upgrade Code Editor (" + format(gameData.auto5amount) + ") Cost: " + format(gameData.auto5cost) + " Stellar | Damage: 1.5e6 | x" + format(gameData.auto5mult);
+  document.getElementById("upgradeAuto6").innerHTML = "Upgrade Brute-Force Hacks (" + Math.floor(gameData.auto6amount) + ") Cost: " + format(gameData.auto6cost) + " Stellar | Damage: 7e8 | x" + format(gameData.auto6mult);
+  document.getElementById("upgradeAuto7").innerHTML = "Upgrade Framework (" + Math.floor(gameData.auto7amount) + ") Cost: " + format(gameData.auto7cost) + " Stellar | Damage: 5e12 | x" + format(gameData.auto7mult);
+  document.getElementById("upgradeAuto8").innerHTML = "Upgrade i3 (" + Math.floor(gameData.auto8amount) + ") Cost: " + format(gameData.auto8cost) + " Stellar | Damage: 2e17 | x" + format(gameData.auto8mult);
+  document.getElementById("upgradeAuto9").innerHTML = "Upgrade Malware (" + Math.floor(gameData.auto9amount) + ") Cost: " + format(gameData.auto9cost) + " Stellar | Damage: 9e24 | x" + format(gameData.auto9mult);
   document.getElementById("hackSpeedButton").innerHTML = "Increase Hack Speed, Cost: " + format(gameData.hackSpeedCost)
-  document.getElementById("hackSpeed").innerHTML = "You hack every " + format(gameData.hackSpeed) + "ms."
+  document.getElementById("hackSpeed").innerHTML = "You hack every " + format(gameData.hackSpeed) + "ms.";
   document.getElementById("opponentLevel").innerHTML = "Level: " + gameData.opponentLevel;
   document.getElementById("opponentHealth").innerHTML = "HP: " + format(gameData.opponentHealth);
   document.getElementById("opponentRewards").innerHTML = "You will earn " + format(gameData.opponentRewards) + " Stellar per computer hacked.";
   document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
-  document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
+  document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage.";
 }
 
 
