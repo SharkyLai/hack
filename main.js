@@ -302,14 +302,14 @@ function temporaryDamageIncrease() {
    }
 }
 
-/* var saveGameLoop = window.setInterval(function() {
+var saveGameLoop = window.setInterval(function() {
   localStorage.setItem("hacklickerSave", JSON.stringify(gameData))
-}, 15000)
+}, 10000)
 
 var savegame = JSON.parse(localStorage.getItem("hacklickerSave"))
 if (savegame !== null) {
   gameData = savegame
-} */
+} 
 
 var newsArray = ["congratulations! you have an internet connection.", " 'im gonna implement that later.' -shark " , " 'this game sucks.' -IGN " , "isn't this just a worse version of cookie clicker?", "retard makes hack game, influencing generations to hack", "the developer of this game works on this stupid thing more than actual features and bug fixes.","#sharkisoverparty","ReferenceError: yourLife is not defined.","why does the code work? why doesn't it work?", "the developer publicly states that he is NOT a hacker.", "if it's worth doing, it's worth overdoing.", "only retards read the news here.", "stop afking!"];
 
@@ -390,6 +390,7 @@ function updateAll() {
   document.getElementById("opponentRewards").innerHTML = "You will earn " + format(gameData.opponentRewards) + " Stellar per computer hacked.";
   document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
   document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage.";
+  document.getElementById("tempDamageIncrease").innerHTML = "Increase your current damage by 1.4x, Cost: " + format(gameData.tempDamageCost)
 }
 
 updateAll();
