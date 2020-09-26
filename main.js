@@ -326,8 +326,6 @@ document.getElementById("randomNews").innerHTML = randomNews;
 
 var words_1to100 = ["cookie", "string", "array", "python", "DDoS", "denial", "service", "variable", "constant", "function", "brute", "force", "framework", "script", "code", "spaghetti", "error", "html", "javascript", "hacker", "firewall", "css"];
 
-var wordAmount = gameData.opponentHealth / gameData.wpw
-
 
 var hackArray = [];
 var finalHackArray = [];
