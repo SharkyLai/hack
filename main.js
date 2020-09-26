@@ -392,7 +392,7 @@ function updateAll() {
   document.getElementById("opponentRewards").innerHTML = "You will earn " + format(gameData.opponentRewards) + " Stellar per computer hacked.";
   document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
   document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
-  document.getElementById("tempDamageIncrease").innerHTML = "Increase your current damage by 1.4x, Cost: " + format(gameData.tempDamageCost)
+  document.getElementById("tempDamageIncrease").innerHTML = "Increase your current damage by 1.4x, Cost: " + format(gameData.tempDamageCost);
 }
 
 updateAll();
