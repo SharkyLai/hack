@@ -435,6 +435,15 @@ if (savegame !== null) {
   gameData = savegame
 }
 
+var saveHackLoop = window.setInterval(function() {
+  localStorage.setItem("gameLoopSave", JSON.stringify(mainGameLoop))
+}, 100)
+
+var hackLoop = JSON.parse(localStorage.getItem("gameLoopSave"))
+if (savegame !== null) {
+  mainGameLoop = hackLoop
+}
+
 
 function updateAll() {
   document.getElementById("levelProgress").innerHTML = format(gameData.damagePerSecond) + " / " + format(gameData.opponentHealth * 10);
@@ -455,6 +464,10 @@ function updateAll() {
   document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
   document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage.";
   document.getElementById("tempDamageIncrease").innerHTML = "Increase your current damage by 1.4x, Cost: " + format(gameData.tempDamageCost)
+  mainGameLoop = window.setInterval(function() {
+    autoHack()
+  }, gameData.hackSpeed)
+
 }
 
 updateAll();
