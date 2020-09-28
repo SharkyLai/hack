@@ -310,12 +310,6 @@ function buyMax9() {
  }
 }
 
-function buyMaxHackSpeed() {
-  while (gameData.Stellar >= gameData.hackSpeedCost) {
-    buyHackSpeed();
-  }
-}
-
 function wait(ms){
   var start = new Date().getTime();
   var end = start;
@@ -351,6 +345,12 @@ function buyHackSpeed() {
   document.getElementById("hackSpeedButton").innerHTML = "Increase Hack Speed, Cost: " + format(gameData.hackSpeedCost)
   document.getElementById("hackSpeed").innerHTML = "You hack every " + format(gameData.hackSpeed) + "ms."
   document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
+  }
+}
+
+function buyMaxHackSpeed() {
+  while (gameData.Stellar >= gameData.hackSpeedCost) {
+    buyHackSpeed();
   }
 }
 
