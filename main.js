@@ -1,5 +1,6 @@
 var gameData = {
     Stellar: 10,
+    cardano: 0,
     opponentLevel: 1,
     opponentHealth: 1,
     opponentRewards: 30,
@@ -58,13 +59,6 @@ function format(amount) {
   if (power < 3) return amount.toFixed(2);
   return mantissa.toFixed(2) + "e" + power
 }
-
-/* function updateGUI() {
-    for (let i = 0; automatorNumber < 10; automatorNumber++) {
-        let a = automators[automatorNumber]
-        document.getElementById("auto" + (automatorNumber + 1)).innerHTML = "Amount: " + format(a.amount) + "<br>Multiplier: " + format(a.mult) + "<br>Cost: " + format(a.cost)
-    }
-} */
 
 function levelUp() {
    if (gameData.damagePerSecond >= (gameData.opponentHealth * 10)) {
@@ -472,10 +466,6 @@ function updateAll() {
 
 updateAll();
 
-//generateHackArray();
-
-
-// updateGUI();
 
 
 
