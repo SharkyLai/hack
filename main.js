@@ -40,19 +40,6 @@ var gameData = {
     tempDamageCost: 1e16,
 }
 
-
-
-/*for (let i = 0; i < 100; i + 0.05) {
-    let automator = {
-        cost: Math.pow(50, 1 + i),
-        amount: 0,
-        mult: 1 
-    }
-    
-}  */
-
-//automator.push(automators)
-
 function format(amount) {
   let power = Math.floor(Math.log10(amount));
   let mantissa = amount / Math.pow(10, power);
