@@ -353,7 +353,7 @@ function temporaryDamageIncrease() {
    if (gameData.Stellar >= gameData.tempDamageCost) {
      gameData.Stellar = gameData.Stellar - gameData.tempDamageCost;
      gameData.damagePerSecond = gameData.damagePerSecond * 2;
-     gameData.tempDamageCost = gameData.tempDamageCost * 10000;
+     gameData.tempDamageCost = gameData.tempDamageCost * 100;
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
      document.getElementById("tempDamageIncrease").innerHTML = "Increase your current damage by 2x, Cost: " + format(gameData.tempDamageCost)
      document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
