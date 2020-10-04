@@ -94,7 +94,7 @@ function buyAutomator1() {
      gameData.auto1cost = gameData.auto1cost * 1.2;
      gameData.auto1amount = gameData.auto1amount + 1;
      if (gameData.auto1amount % 5 == 0) {
-       gameData.auto1mult = Math.pow(2, gameData.auto1amount / 10);
+       gameData.auto1mult = Math.pow(2, gameData.auto1amount / 5);
        if (gameData.auto1mult > gameData.multCap) {
          gameData.auto1mult = gameData.multCap  
         }
@@ -113,7 +113,7 @@ function buyAutomator2() {
      gameData.auto2cost = gameData.auto2cost * 1.2;
      gameData.auto2amount = gameData.auto2amount + 1;
      if (gameData.auto2amount % 5 == 0) {
-      gameData.auto2mult = Math.pow(2, gameData.auto2amount / 10);
+      gameData.auto2mult = Math.pow(2, gameData.auto2amount / 5);
       if (gameData.auto2mult > gameData.multCap) {
         gameData.auto2mult = gameData.multCap  
        }
@@ -133,7 +133,7 @@ function buyAutomator3() {
      gameData.auto3cost = gameData.auto3cost * 1.2;
      gameData.auto3amount = gameData.auto3amount + 1;
      if (gameData.auto3amount % 5 == 0) {
-      gameData.auto3mult = Math.pow(2, gameData.auto3amount / 10);
+      gameData.auto3mult = Math.pow(2, gameData.auto3amount / 5);
       if (gameData.auto3mult > gameData.multCap) {
         gameData.auto3mult = gameData.multCap  
        }
@@ -152,7 +152,7 @@ function buyAutomator4() {
      gameData.auto4cost = gameData.auto4cost * 1.2;
      gameData.auto4amount = gameData.auto4amount + 1;
      if (gameData.auto4amount % 5 == 0) {
-      gameData.auto4mult = Math.pow(2, gameData.auto4amount / 10);
+      gameData.auto4mult = Math.pow(2, gameData.auto4amount / 5);
       if (gameData.auto4mult > gameData.multCap) {
         gameData.auto4mult = gameData.multCap  
        }
@@ -170,7 +170,7 @@ function buyAutomator5() {
      gameData.auto5cost = gameData.auto5cost * 1.2;
      gameData.auto5amount = gameData.auto5amount + 1;
      if (gameData.auto5amount % 5 == 0) {
-      gameData.auto5mult = Math.pow(2, gameData.auto5amount / 10);
+      gameData.auto5mult = Math.pow(2, gameData.auto5amount / 5);
       if (gameData.auto5mult > gameData.multCap) {
         gameData.auto5mult = gameData.multCap  
        }
@@ -189,7 +189,7 @@ function buyAutomator6() {
      gameData.auto6cost = gameData.auto6cost * 1.2;
      gameData.auto6amount = gameData.auto6amount + 1;
      if (gameData.auto6amount % 5 == 0) {
-      gameData.auto6mult = Math.pow(2, gameData.auto6amount / 10);
+      gameData.auto6mult = Math.pow(2, gameData.auto6amount / 5);
       if (gameData.auto6mult > gameData.multCap) {
         gameData.auto6mult = gameData.multCap  
        }
@@ -208,7 +208,7 @@ function buyAutomator7() {
      gameData.auto7cost = gameData.auto7cost * 1.2;
      gameData.auto7amount = gameData.auto7amount + 1;
      if (gameData.auto7amount % 5 == 0) {
-      gameData.auto7mult = Math.pow(2, gameData.auto7amount / 10);
+      gameData.auto7mult = Math.pow(2, gameData.auto7amount / 5);
       if (gameData.auto7mult > gameData.multCap) {
         gameData.auto7mult = gameData.multCap  
        }
@@ -226,7 +226,7 @@ function buyAutomator8() {
      gameData.auto8cost = gameData.auto8cost * 1.2;
      gameData.auto8amount = gameData.auto8amount + 1;
      if (gameData.auto8amount % 5 == 0) {
-      gameData.auto8mult = Math.pow(2, gameData.auto8amount / 10);
+      gameData.auto8mult = Math.pow(2, gameData.auto8amount / 5);
       if (gameData.auto8mult > gameData.multCap) {
         gameData.auto8mult = gameData.multCap  
        }
@@ -244,7 +244,7 @@ function buyAutomator9() {
      gameData.auto9cost = gameData.auto9cost * 1.2;
      gameData.auto9amount = gameData.auto9amount + 1;
      if (gameData.auto9amount % 5 == 0) {
-      gameData.auto9mult = Math.pow(2, gameData.auto9amount / 10);
+      gameData.auto9mult = Math.pow(2, gameData.auto9amount / 5);
       if (gameData.auto9mult > gameData.multCap) {
         gameData.auto9mult = gameData.multCap  
        }
