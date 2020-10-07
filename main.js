@@ -521,6 +521,16 @@ if (savegame !== null) {
   mainGameLoop = hackLoop
 }
 
+function tab(tab) {
+  document.getElementById("Automators").style.display = "none";
+  document.getElementById("Upgrades").style.display = "none";
+  document.getElementById("Options").style.display = "none";
+  document.getElementById("Stats").style.display = "none";
+  document.getElementById("Achievements").style.display = "none";
+  document.getElementById("Ascension").style.display = "none";
+  document.getElementById(tab).style.display = "inline";
+}
+tab("Automators")
 
 function updateAll() {
   document.getElementById("buyComputer").innerHTML = "Buy Computer (" + format(gameData.computerAmount) + ") Cost: " + format(gameData.computerCost);

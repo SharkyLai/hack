@@ -10,8 +10,16 @@
 <button onclick = 'levelUp()' id = "levelUp">Level Up</button>
  <button onclick = 'lastLevel()'>Last Level</button>
  <p id = "randomNews"></p>
- <p id = "Stellar">You have 10 Stellar.</p></p>
- <div id = "navigateButtons"></div>
+ <p id = "Stellar">You have 10 Stellar.</p>
+ <div id = "navigateButtons">
+    <button onclick = "tab('Automators')">Automators</button>
+    <button onclick = "tab('Upgrades')">Upgrades</button>
+    <button onclick = "tab('Options')">Options</button>
+    <button onclick = "tab('Stats')">Stats</button>
+    <button onclick = "tab('Achievements')">Achievements</button>
+    <button onclick = "tab('Ascension')">Ascension</button>
+ </div>
+ <div id = "Automators">
  <p id = "opponentLevel">Level: 1</p></p>  
  <p id = "opponentHealth">HP: 1</p></p>
  <p id = "opponentRewards">You will earn 30 Stellar per computer hacked.</p></p>
@@ -20,8 +28,6 @@
  <p id = "levelProgress">0 / 100</p>
  <button onclick = 'buyComputer()' id = "buyComputer">Buy Computer (1) Cost: 20</button><button onclick = 'buyMaxComputer()' id = "buyMaxComputer">Buy Max</button>
  <p>Computers are required to get more automators.</p><br><br>
- <button onclick = 'buyHackSpeed()' id = "hackSpeedButton">Increase Hack Speed, Cost: 1e4 Stellar</button> <button onclick = 'buyMaxHackSpeed()' id = "buyMaxHackSpeed">Buy Max</button><br><br>
- <button onclick = 'temporaryDamageIncrease()' id = "tempDamageIncrease">Increase your current damage by 2x, Cost: 1e16 Stellar</button><br>
  <button onclick = 'buyAutomator1()' id = "upgradeAuto1"> Buy Console (0) Cost: 10 Stellar | Damage: 2 | x1.00</button> <button onclick = 'buyMax1()' id = "buyMax1">Buy Max</button><br>
  <button onclick = 'buyAutomator2()' id = "upgradeAuto2"> Buy Script (0) Cost: 500 Stellar | Damage: 50 | x1.00</button><button onclick = 'buyMax2()' id = "buyMax2">Buy Max</button><br>
  <button onclick = 'buyAutomator3()' id = "upgradeAuto3"> Buy Beginner Hacker (0) Cost: 4e4 Stellar | Damage: 600 | x1.00<button onclick = 'buyMax3()' id = "buyMax3">Buy Max</button></button><br>
@@ -30,10 +36,27 @@
  <button onclick = 'buyAutomator6()' id = "upgradeAuto6"> Buy Brute-Force Hacks (0) Cost: 1e11 Stellar | Damage: 7e8 | x1.00</button><button onclick = 'buyMax6()' id = "buyMax6">Buy Max</button><br>
  <button onclick = 'buyAutomator7()' id = "upgradeAuto7"> Buy Framework (0) Cost: 2e15 Stellar | Damage: 5e12 | x1.00</button><button onclick = 'buyMax7()' id = "buyMax7">Buy Max</button><br>
  <button onclick = 'buyAutomator8()' id = "upgradeAuto8"> Buy i3 (0) Cost: 8e20 Stellar | Damage: 2e17 | x1.00</button><button onclick = 'buyMax8()' id = "buyMax8">Buy Max</button><br>
- <button onclick = 'buyAutomator9()' id = "upgradeAuto9"> Buy Malware (0) Cost: 5e27 Stellar | Damage: 9e24 | x1.00</button><button onclick = 'buyMax9()' id = "buyMax9">Buy Max</button><br>
- <button onclick = 'darkWeb()' id = "darkWeb">Access the Deep Web</button>
+ <button onclick = 'buyAutomator9()' id = "upgradeAuto9"> Buy Malware (0) Cost: 5e27 Stellar | Damage: 9e24 | x1.00</button><button onclick = 'buyMax9()' id = "buyMax9">Buy Max</button><br><br>
+ <button onclick = 'darkWeb()' id = "darkWeb">Access the Deep Web</button><br>
  <button onclick = 'hardReset()' id = "hardReset">Reset the game.</button>
- <p>press if you can't buy anything</p><br>
+ <p>press only if you can't buy anything (will reset the game without a boost)</p><br>
+</div>
+<div id = "Upgrades">
+<button onclick = 'buyHackSpeed()' id = "hackSpeedButton">Increase Hack Speed, Cost: 1e4 Stellar</button> <button onclick = 'buyMaxHackSpeed()' id = "buyMaxHackSpeed">Buy Max</button><br><br>
+<button onclick = 'temporaryDamageIncrease()' id = "tempDamageIncrease">Increase your current damage by 2x, Cost: 1e16 Stellar</button><br>
+</div>
+<div id = "Options">
+<p>check back here soon, this is a wip</p>
+</div>
+<div id = "Stats">
+    <p>check back here soon, this is a wip</p>
+</div>
+<div id = "Achievements">
+    <p>check back here soon, this is a wip</p>
+</div>
+<div id = "Ascension">
+    <p>check back here soon, this is a wip</p>
+</div>
  <a href="https://sharkylai.github.io/changelog.html">view the changelog</a><br>
  <a href="https://sharkylai.github.io/guide.html">confused about how to play? click here for the guide</a>
 </body>
