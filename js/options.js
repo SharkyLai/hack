@@ -1,0 +1,3 @@
+var opts = {
+    selectedTheme = "normal"
+}

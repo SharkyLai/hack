@@ -41,7 +41,9 @@ var gameData = {
     tempDamageCost: 1e16,
     stellarMult: 1,
     playerStatus: "surfaceWeb",
-    deepWebCost: 1e75
+    deepWebCost: 1e75,
+    unlocks: 0,
+    unlockCost: 3,
 }
 
 function format(amount) {
@@ -74,6 +76,27 @@ function lastLevel() {
  } 
 }
 
+function automatorUnlock() {
+  if (gameData.unlocks = 0 && (gameData.opponentLevel >= gameData.unlockCost)) {
+    gameData.unlockCost = 6
+  } else if (gameData.unlocks = 1 && (gameData.opponentLevel >= gameData.unlockCost)) {
+    gameData.unlockCost = 10
+  } else if (gameData.unlocks = 2 && (gameData.opponentLevel >= gameData.unlockCost)) {
+    gameData.unlockCost = 15
+  } else if (gameData.unlocks = 3 && (gameData.opponentLevel >= gameData.unlockCost)) {
+    gameData.unlockCost = 21
+  } else if (gameData.unlocks = 4 && (gameData.opponentLevel >= gameData.unlockCost)) {
+    gameData.unlockCost = 28
+  } else if (gameData.unlocks = 5 && (gameData.opponentLevel >= gameData.unlockCost)) {
+    gameData.unlockCost = 36
+  } else if (gameData.unlocks = 6 && (gameData.opponentLevel >= gameData.unlockCost)) {
+    gameData.unlockCost = 45
+  } else if (gameData.unlocks = 7 && (gameData.opponentLevel >= gameData.unlockCost)) {
+
+  } else if (gameData.unlocks = 8) {
+    gameData.unlockCost = 55
+  } 
+}
 function buyComputer() {
   if (gameData.Stellar >= gameData.computerCost) {
     gameData.computerAmount = gameData.computerAmount + 1;
@@ -102,9 +125,7 @@ function buyAutomator1() {
          gameData.auto1mult = gameData.multCap  
         }
      }
-     if (gameData.damagePerSecond >= gameData.opponentHealth * 5) {
-      gameData.opponentRewards = gameData.opponentRewards * 1.5;
-    }
+     
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
      document.getElementById("upgradeAuto1").innerHTML = "Upgrade Console (" + format(gameData.auto1amount) + ") Cost: " + format(gameData.auto1cost) + " Stellar | Damage: 2 | x" + format(gameData.auto1mult)
      document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
@@ -124,9 +145,7 @@ function buyAutomator2() {
         gameData.auto2mult = gameData.multCap  
        }
     }
-    if (gameData.damagePerSecond >= gameData.opponentHealth * 5) {
-      gameData.opponentRewards = gameData.opponentRewards * 1.5;
-    }
+    
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
      document.getElementById("upgradeAuto2").innerHTML = "Upgrade Script (" + format(gameData.auto2amount) + ") Cost: " + format(gameData.auto2cost) + " Stellar | Damage: 50 | x" + format(gameData.auto2mult)
      document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
@@ -146,9 +165,7 @@ function buyAutomator3() {
         gameData.auto3mult = gameData.multCap  
        }
     }
-    if (gameData.damagePerSecond >= gameData.opponentHealth * 5) {
-      gameData.opponentRewards = gameData.opponentRewards * 1.5;
-    }
+    
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
      document.getElementById("upgradeAuto3").innerHTML = "Upgrade Beginner Hacker (" + format(gameData.auto3amount) + ") Cost: " + format(gameData.auto3cost) + " Stellar | Damage: 600 | x" + format(gameData.auto3mult)
      document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
@@ -168,9 +185,7 @@ function buyAutomator4() {
         gameData.auto4mult = gameData.multCap  
        }
     }
-    if (gameData.damagePerSecond >= gameData.opponentHealth * 5) {
-      gameData.opponentRewards = gameData.opponentRewards * 1.5;
-    }
+    
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
      document.getElementById("upgradeAuto4").innerHTML = "Upgrade Library (" + format(gameData.auto4amount) + ") Cost: " + format(gameData.auto4cost) + " Stellar | Damage: 1.4e4 | x" + format(gameData.auto4mult)
      document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
@@ -189,9 +204,7 @@ function buyAutomator5() {
         gameData.auto5mult = gameData.multCap  
        }
     }
-    if (gameData.damagePerSecond >= gameData.opponentHealth * 5) {
-      gameData.opponentRewards = gameData.opponentRewards * 1.5;
-    }
+    
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
      document.getElementById("upgradeAuto5").innerHTML = "Upgrade Code Editor (" + format(gameData.auto5amount) + ") Cost: " + format(gameData.auto5cost) + " Stellar | Damage: 1.5e6 | x" + format(gameData.auto5mult)
      document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
@@ -211,9 +224,7 @@ function buyAutomator6() {
         gameData.auto6mult = gameData.multCap  
        }
     } 
-    if (gameData.damagePerSecond >= gameData.opponentHealth * 5) {
-      gameData.opponentRewards = gameData.opponentRewards * 1.5;
-    }
+    
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
      document.getElementById("upgradeAuto6").innerHTML = "Upgrade Brute-Force Hacks (" + format(gameData.auto6amount) + ") Cost: " + format(gameData.auto6cost) + " Stellar | Damage: 7e8 | x" + format(gameData.auto6mult)
      document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
@@ -233,9 +244,7 @@ function buyAutomator7() {
         gameData.auto7mult = gameData.multCap  
        }
     }
-    if (gameData.damagePerSecond >= gameData.opponentHealth * 5) {
-      gameData.opponentRewards = gameData.opponentRewards * 1.5;
-    }
+    
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
      document.getElementById("upgradeAuto7").innerHTML = "Upgrade Framework (" + format(gameData.auto7amount) + ") Cost: " + format(gameData.auto7cost) + " Stellar | Damage: 5e12 | x" + format(gameData.auto7mult)
      document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
@@ -254,9 +263,7 @@ function buyAutomator8() {
         gameData.auto8mult = gameData.multCap  
        }
     }
-    if (gameData.damagePerSecond >= gameData.opponentHealth * 5) {
-      gameData.opponentRewards = gameData.opponentRewards * 1.5;
-    }
+    
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
      document.getElementById("upgradeAuto8").innerHTML = "Upgrade i3 (" + format(gameData.auto8amount) + ") Cost: " + format(gameData.auto8cost) + " Stellar | Damage: 2e17 | x" + format(gameData.auto8mult)
      document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
@@ -275,9 +282,7 @@ function buyAutomator9() {
         gameData.auto9mult = gameData.multCap  
        }
     }
-    if (gameData.damagePerSecond >= gameData.opponentHealth * 5) {
-      gameData.opponentRewards = gameData.opponentRewards * 1.5;
-    }
+    
      document.getElementById("damagePerSecond").innerHTML = "You deal " + format(gameData.damagePerSecond) + " damage."
      document.getElementById("upgradeAuto9").innerHTML = "Upgrade Malware (" + format(gameData.auto9amount) + ") Cost: " + format(gameData.auto9cost) + " Stellar | Damage: 9e24 | x" + format(gameData.auto9mult)
      document.getElementById("Stellar").innerHTML = "You have " + format(gameData.Stellar) + " Stellar.";
@@ -461,19 +466,21 @@ function deepWeb() {
 function hackrifice() {
    if (gameData.playerStatus = "deepWeb") {
      gameData.auto1amount = 0;
-     gameData.auto1amount = 0;
-    
-     gameData.auto1amount = 0; 
-     gameData.auto1amount = 0;
-     
-     gameData.auto1amount = 0;
-     
-     gameData.auto1amount = 0;
-     
-     gameData.auto1amount = 0;
-     
-     gameData.auto1amount = 0;
-     
+     gameData.auto2amount = 0;
+     gameData.auto3amount = 0; 
+     gameData.auto4amount = 0;   
+     gameData.auto5amount = 0;
+     gameData.auto6amount = 0;
+     gameData.auto7amount = 0;
+     gameData.auto8amount = 0;
+     gameData.auto1mult = gameData.auto1mult / 1000;
+     gameData.auto2mult = gameData.auto2mult / 1000;
+     gameData.auto3mult = gameData.auto3mult / 1000;
+     gameData.auto4mult = gameData.auto4mult / 1000;
+     gameData.auto5mult = gameData.auto5mult / 1000;
+     gameData.auto6mult = gameData.auto6mult / 1000;
+     gameData.auto7mult = gameData.auto7mult / 1000;
+     gameData.auto8mult = gameData.auto8mult / 1000;
    }
 }
 
