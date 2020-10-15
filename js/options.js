@@ -1,3 +1,3 @@
-var opts = {
+ /*var opts = {
     selectedTheme = "normal"
-}
+} */

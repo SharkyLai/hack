@@ -77,24 +77,38 @@ function lastLevel() {
 }
 
 function automatorUnlock() {
-  if (gameData.unlocks = 0 && (gameData.opponentLevel >= gameData.unlockCost)) {
+  if ((gameData.unlocks = 0) && (gameData.opponentLevel >= 3)) {
+    hardReset()
+    gameData.unlocks = 1
+    gameData.unlockCost = 3
+  } else if ((gameData.unlocks = 1) && (gameData.opponentLevel >= gameData.unlockCost)) {
+    hardReset()
     gameData.unlockCost = 6
-  } else if (gameData.unlocks = 1 && (gameData.opponentLevel >= gameData.unlockCost)) {
+    gameData.unlocks = 2
+  } else if ((gameData.unlocks = 2) && (gameData.opponentLevel >= gameData.unlockCost)) {
+    hardReset()
     gameData.unlockCost = 10
-  } else if (gameData.unlocks = 2 && (gameData.opponentLevel >= gameData.unlockCost)) {
+    gameData.unlocks = 3
+  } else if ((gameData.unlocks = 3) && (gameData.opponentLevel >= gameData.unlockCost)) {
+    hardReset()
     gameData.unlockCost = 15
-  } else if (gameData.unlocks = 3 && (gameData.opponentLevel >= gameData.unlockCost)) {
+    gameData.unlocks = 4
+  } else if ((gameData.unlocks = 4) && (gameData.opponentLevel >= gameData.unlockCost)) {
+    hardReset()
     gameData.unlockCost = 21
-  } else if (gameData.unlocks = 4 && (gameData.opponentLevel >= gameData.unlockCost)) {
+    gameData.unlocks = 5
+  } else if ((gameData.unlocks = 5) && (gameData.opponentLevel >= gameData.unlockCost)) {
+    hardReset()
     gameData.unlockCost = 28
-  } else if (gameData.unlocks = 5 && (gameData.opponentLevel >= gameData.unlockCost)) {
+    gameData.unlocks = 6
+  } else if ((gameData.unlocks = 6) && (gameData.opponentLevel >= gameData.unlockCost)) {
+    hardReset()
     gameData.unlockCost = 36
-  } else if (gameData.unlocks = 6 && (gameData.opponentLevel >= gameData.unlockCost)) {
+    gameData.unlocks = 7
+  } else if ((gameData.unlocks = 7) && (gameData.opponentLevel >= gameData.unlockCost)) {
+    hardReset()
     gameData.unlockCost = 45
-  } else if (gameData.unlocks = 7 && (gameData.opponentLevel >= gameData.unlockCost)) {
-
-  } else if (gameData.unlocks = 8) {
-    gameData.unlockCost = 55
+    gameData.unlocks = 8
   } 
 }
 function buyComputer() {
@@ -114,7 +128,7 @@ function buyMaxComputer() {
 }
 
 function buyAutomator1() {
-  if (gameData.Stellar >= gameData.auto1cost && gameData.computerAmount > gameData.auto1amount) {
+  if (gameData.Stellar >= gameData.auto1cost && gameData.computerAmount > gameData.auto1amount  && (gameData.unlocks >= 0)) {
      gameData.Stellar = gameData.Stellar - gameData.auto1cost;
      gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto1mult * 2;
      gameData.auto1cost = gameData.auto1cost * 1.2;
@@ -134,7 +148,7 @@ function buyAutomator1() {
 
 
 function buyAutomator2() {
-  if (gameData.Stellar >= gameData.auto2cost && gameData.computerAmount > gameData.auto2amount) {
+  if (gameData.Stellar >= gameData.auto2cost && gameData.computerAmount > gameData.auto2amount && (gameData.unlocks >= 1)) {
      gameData.Stellar = gameData.Stellar - gameData.auto2cost;
      gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto2mult * 50;
      gameData.auto2cost = gameData.auto2cost * 1.2;
@@ -154,7 +168,7 @@ function buyAutomator2() {
 
 
 function buyAutomator3() {
-  if (gameData.Stellar >= gameData.auto3cost && gameData.computerAmount > gameData.auto3amount) {
+  if (gameData.Stellar >= gameData.auto3cost && gameData.computerAmount > gameData.auto3amount && (gameData.unlocks >= 2)) {
      gameData.Stellar = gameData.Stellar - gameData.auto3cost;
      gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto3mult * 600;
      gameData.auto3cost = gameData.auto3cost * 1.25;
@@ -174,7 +188,7 @@ function buyAutomator3() {
 
 
 function buyAutomator4() {
-  if (gameData.Stellar >= gameData.auto4cost && gameData.computerAmount > gameData.auto4amount) {
+  if (gameData.Stellar >= gameData.auto4cost && gameData.computerAmount > gameData.auto4amount && (gameData.unlocks >= 3)) {
      gameData.Stellar = gameData.Stellar - gameData.auto4cost;
      gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto4mult * 14000;
      gameData.auto4cost = gameData.auto4cost * 1.25;
@@ -193,7 +207,7 @@ function buyAutomator4() {
 }
 
 function buyAutomator5() {
-  if (gameData.Stellar >= gameData.auto5cost && gameData.computerAmount > gameData.auto5amount) {
+  if (gameData.Stellar >= gameData.auto5cost && gameData.computerAmount > gameData.auto5amount && (gameData.unlocks >= 4)) {
      gameData.Stellar = gameData.Stellar - gameData.auto5cost;
      gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto5mult * 1500000;
      gameData.auto5cost = gameData.auto5cost * 1.3;
@@ -213,7 +227,7 @@ function buyAutomator5() {
 
 
 function buyAutomator6() {
-  if (gameData.Stellar >= gameData.auto6cost && gameData.computerAmount > gameData.auto6amount) {
+  if (gameData.Stellar >= gameData.auto6cost && gameData.computerAmount > gameData.auto6amount && (gameData.unlocks >= 5)) {
      gameData.Stellar = gameData.Stellar - gameData.auto6cost;
      gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto6mult * 700000000;
      gameData.auto6cost = gameData.auto6cost * 1.3;
@@ -233,7 +247,7 @@ function buyAutomator6() {
 }
 
 function buyAutomator7() {
-  if (gameData.Stellar >= gameData.auto7cost && gameData.computerAmount > gameData.auto7amount) {
+  if (gameData.Stellar >= gameData.auto7cost && gameData.computerAmount > gameData.auto7amount && (gameData.unlocks >= 6)) {
      gameData.Stellar = gameData.Stellar - gameData.auto7cost;
      gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto7mult * 5e12;
      gameData.auto7cost = gameData.auto7cost * 1.35;
@@ -252,7 +266,7 @@ function buyAutomator7() {
 }
 
 function buyAutomator8() {
-  if (gameData.Stellar >= gameData.auto8cost && gameData.computerAmount > gameData.auto8amount) {
+  if (gameData.Stellar >= gameData.auto8cost && gameData.computerAmount > gameData.auto8amount && (gameData.unlocks >= 7)) {
      gameData.Stellar = gameData.Stellar - gameData.auto8cost;
      gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto8mult * 2e17;
      gameData.auto8cost = gameData.auto8cost * 1.35;
@@ -271,7 +285,7 @@ function buyAutomator8() {
 }
 
 function buyAutomator9() {
-  if (gameData.Stellar >= gameData.auto9cost && gameData.computerAmount > gameData.auto9amount) {
+  if (gameData.Stellar >= gameData.auto9cost && gameData.computerAmount > gameData.auto9amount && (gameData.unlocks >= 8)) {
      gameData.Stellar = gameData.Stellar - gameData.auto9cost;
      gameData.damagePerSecond = gameData.damagePerSecond + gameData.auto9mult * 9e24;
      gameData.auto9cost = gameData.auto9cost * 1.4;
@@ -290,55 +304,55 @@ function buyAutomator9() {
 }
 
 function buyMax1() { 
-  while (gameData.Stellar >= gameData.auto1cost && gameData.computerAmount > gameData.auto1amount) {
+  while (gameData.Stellar >= gameData.auto1cost && gameData.computerAmount > gameData.auto1amount && (gameData.unlocks >= 0)) {
     buyAutomator1();
  }
 }
 
 function buyMax2() {
-  while (gameData.Stellar >= gameData.auto2cost && gameData.computerAmount > gameData.auto2amount) {
+  while (gameData.Stellar >= gameData.auto2cost && gameData.computerAmount > gameData.auto2amount && (gameData.unlocks >= 1)) {
     buyAutomator2();
  }
 }
 
 function buyMax3() {
-  while (gameData.Stellar >= gameData.auto3cost && gameData.computerAmount > gameData.auto3amount) {
+  while (gameData.Stellar >= gameData.auto3cost && gameData.computerAmount > gameData.auto3amount && (gameData.unlocks >= 2)) {
     buyAutomator3();
  }
 }
 
 function buyMax4() {
-  while (gameData.Stellar >= gameData.auto4cost && gameData.computerAmount > gameData.auto4amount) {
+  while (gameData.Stellar >= gameData.auto4cost && gameData.computerAmount > gameData.auto4amount && (gameData.unlocks >= 3)) {
     buyAutomator4();
  }
 }
 
 function buyMax5() {
-  while (gameData.Stellar >= gameData.auto5cost && gameData.computerAmount > gameData.auto5amount) {
+  while (gameData.Stellar >= gameData.auto5cost && gameData.computerAmount > gameData.auto5amount && (gameData.unlocks >= 4)) {
     buyAutomator5();
  }
 }
 
 function buyMax6() {
-  while (gameData.Stellar >= gameData.auto6cost && gameData.computerAmount > gameData.auto6amount) {
+  while (gameData.Stellar >= gameData.auto6cost && gameData.computerAmount > gameData.auto6amount && (gameData.unlocks >= 5)) {
     buyAutomator6();
  }
 }
 
 function buyMax7() {
-  while (gameData.Stellar >= gameData.auto7cost && gameData.computerAmount > gameData.auto7amount) {
+  while (gameData.Stellar >= gameData.auto7cost && gameData.computerAmount > gameData.auto7amount && (gameData.unlocks >= 6)) {
     buyAutomator7();
  }
 }
 
 function buyMax8() {
-  while (gameData.Stellar >= gameData.auto8cost && gameData.computerAmount > gameData.auto8amount) {
+  while (gameData.Stellar >= gameData.auto8cost && gameData.computerAmount > gameData.auto8amount && (gameData.unlocks >= 7)) {
     buyAutomator8();
  }
 }
 
 function buyMax9() {
-  while (gameData.Stellar >= gameData.auto9cost && gameData.computerAmount > gameData.auto9amount) {
+  while (gameData.Stellar >= gameData.auto9cost && gameData.computerAmount > gameData.auto9amount && (gameData.unlocks >= 8)) {
     buyAutomator9();
  }
 }
@@ -438,7 +452,9 @@ function hardReset() {
     tempDamageCost: 1e16,
     stellarMult: 1,
     playerStatus: "surfaceWeb",
-    deepWebCost: 1e75
+    deepWebCost: 1e75,
+    unlocks: 0,
+    unlockCost: 3,
 }
  updateAll();
 }
@@ -564,7 +580,7 @@ if (savegame !== null) {
 
 var saveHackLoop = window.setInterval(function() {
   localStorage.setItem("gameLoopSave", JSON.stringify(mainGameLoop))
-}, 100)
+}, 1000)
 
 var hackLoop = JSON.parse(localStorage.getItem("gameLoopSave"))
 if (savegame !== null) {
