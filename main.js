@@ -79,8 +79,8 @@ function lastLevel() {
 function automatorUnlock() {
   if ((gameData.unlocks = 0) && (gameData.opponentLevel >= 3)) {
     hardReset()
-    gameData.unlocks = 1
     gameData.unlockCost = 3
+    gameData.unlocks = 1
   } else if ((gameData.unlocks = 1) && (gameData.opponentLevel >= gameData.unlockCost)) {
     hardReset()
     gameData.unlockCost = 6
